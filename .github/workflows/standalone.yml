@@ -20,9 +20,9 @@ jobs:
 
     steps:
     - name: Set Application Version (Environment Variable)
-      run:
+      run: |
         APP_VERSION=$(echo '${{ env.APP_VERSION }}' | cut -d 'v' -f 2)
-        echo "APP_VERSION=$APP_VERSION" >> $GITHUB_ENV
+        echo 'APP_VERSION=$APP_VERSION' >> $GITHUB_ENV
 
     - name: Checkout Repository Code
       uses: actions/checkout@v4
